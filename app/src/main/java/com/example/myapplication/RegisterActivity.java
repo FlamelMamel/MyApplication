@@ -15,7 +15,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class RegisterActivity extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etReenterPassword;
     private Button btnRegister;
-    private String URL = "http://10.202.0.122/login/register.php";
+    private String URL = "http://192.168.171.9/login/signup.php";
     private String name, email, password, repassword;
 
     @Override
@@ -42,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
         password = etPassword.getText().toString();
         repassword = etReenterPassword.getText().toString();
         btnRegister = findViewById(R.id.btn_register);
-        btnRegister.setText(name);
         if (!name.equals("") && !email.equals("") && !password.equals("") && !repassword.equals("")){
             Handler handler = new Handler();
             handler.post(new Runnable(){
                 @Override
                 public void run(){
+                    btnRegister.setText(name);
                     String[] field = new String[4];
                     field[0] = "username";
                     field[1] = "email";
@@ -55,19 +55,18 @@ public class RegisterActivity extends AppCompatActivity {
                     field[3] = "repassword";
 
                     String[] data = new String[4];
-                    data[0] = etName.getText().toString();
-                    data[1] = etEmail.getText().toString();
-                    data[2] = etPassword.getText().toString();
-                    data[3] = etReenterPassword.getText().toString();
+                    data[0] = name;
+                    data[1] = email;
+                    data[2] = password;
+                    data[3] = repassword;
                     PutData putData = new PutData(URL, "POST", field, data);
                     if (putData.startPut()){
                         if (putData.onComplete()) {
                             String result = putData.getResult();
 
-                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT);
+                            btnRegister.setText(result);
                         }
                     }
-                    Toast.makeText(getApplicationContext(), "fail", Toast.LENGTH_LONG);
                 }
             });
         }
