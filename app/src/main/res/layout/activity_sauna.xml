@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SaunaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/productimage"
+                android:layout_width="match_parent"
+                android:layout_height="379dp"
+                android:background="@drawable/toolbar"
+                android:elevation="4dp"
+                android:visibility="visible">
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/slider"
+                    android:layout_width="364dp"
+                    android:layout_height="348dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/img" />
+
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:elevation="4dp"
+                    android:src="@drawable/share" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productimage"
+                android:background="#fff"
+                android:gravity="center"
+                android:orientation="horizontal"
+
+                android:visibility="visible">
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating"
+                android:background="#fff"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="right"
+                    android:text="Sauna Almaty"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="36dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="right"
+                    android:text="Price:                           5000₸/h"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="26dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="right"
+                    android:text="City:                                                                Nur-Sultan"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="right"
+                    android:text="Adress:                                      Kabanbay Batyr 60A/6"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="right"
+                    android:text="Workin mode:        Tu/Wd/Th/Fr/St/Sn 13-00 : 24-00"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="right"
+                    android:text="Phone number:                                     +7 747 500 1098"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/colour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:background="#fff"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/colorcircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:orientation="horizontal">
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/colour"
+                android:background="#fff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/abel"
+                    android:text="How much time?(Hour)"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="25dp" />
+
+                <LinearLayout
+                    android:id="@+id/qut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/plus"
+                        android:layout_width="31dp"
+                        android:layout_height="31dp"
+                        android:layout_marginLeft="22dp"
+                        android:padding="2dp"
+                        android:onClick="plus"
+                        android:src="@drawable/plus" />
+
+                    <TextView
+                        android:id="@+id/sizeno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:background="#000"
+                        android:backgroundTint="@color/colorWhite"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/colorRelax"
+                        android:textSize="26dp" />
+
+                    <ImageView
+                        android:id="@+id/minus"
+                        android:layout_width="31dp"
+                        android:layout_height="31dp"
+                        android:layout_marginLeft="16dp"
+                        android:padding="2dp"
+                        android:onClick="minus"
+                        android:src="@drawable/minus" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/size"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_bg"
+                    android:elevation="3dp"
+                    android:fontFamily="@font/abel"
+                    android:gravity="center"
+                    android:paddingLeft="90dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="90dp"
+                    android:paddingBottom="12dp"
+                    android:text="RESERVE"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:text="ADD TO WISHLIST"
+                    android:textColor="#EC5252"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>>
+</androidx.constraintlayout.widget.ConstraintLayout>

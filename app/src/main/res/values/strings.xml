@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">JustRelax</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_recently">Visited</string>
+    <string name="sales_icon">Sales</string>
+    <string name="app_icon"></string>
+    <string name="just">Just</string>
+    <string name="relax">Relax</string>
+    <string name="rec">Рекомендации</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="sauna">Sauna</string>
+    <string name="swipe_left_for_register">If you have an account Swipe</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">Let\'s join us and JustRelax</string>
+    <string name="swipe_right_for_login">If you have an account Swipe</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Full Name</string>
+    <string name="not_registered">Not registered?</string>
+    <string name="alreadyregistered">Already registered?</string>
+    <string name="visited">Visited</string>
+</resources>
