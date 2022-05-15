@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +16,6 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class RegisterActivity extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etReenterPassword;
     private Button btnRegister;
-    private String URL = "http://192.168.171.9/login/signup.php";
     private String name, email, password, repassword;
 
     @Override
@@ -43,11 +43,12 @@ public class RegisterActivity extends AppCompatActivity {
         repassword = etReenterPassword.getText().toString();
         btnRegister = findViewById(R.id.btn_register);
         if (!name.equals("") && !email.equals("") && !password.equals("") && !repassword.equals("")){
-            Handler handler = new Handler();
-            handler.post(new Runnable(){
+            Handler handler = new Handler(Looper.getMainLooper());
+            handler.post(new Runnable() {
                 @Override
-                public void run(){
-                    btnRegister.setText(name);
+                public void run() {
+                    //Starting Write and Read data with URL
+                    //Creating array for parameters
                     String[] field = new String[4];
                     field[0] = "username";
                     field[1] = "email";
@@ -59,14 +60,15 @@ public class RegisterActivity extends AppCompatActivity {
                     data[1] = email;
                     data[2] = password;
                     data[3] = repassword;
-                    PutData putData = new PutData(URL, "POST", field, data);
-                    if (putData.startPut()){
+                    PutData putData = new PutData("https://192.168.171.9/login/signup.php", "POST", field, data);
+                    if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
-
-                            btnRegister.setText(result);
+                            //End ProgressBar (Set visibility to GONE)
+                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
                         }
                     }
+                    //End Write and Read data with URL
                 }
             });
         }
