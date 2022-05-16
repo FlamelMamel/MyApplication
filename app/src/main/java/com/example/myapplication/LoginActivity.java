@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         email = password = "";
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
+        //fghjkl
     }
 
 
