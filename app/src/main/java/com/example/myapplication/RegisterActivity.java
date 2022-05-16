@@ -37,10 +37,10 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         etReenterPassword = findViewById(R.id.et_repassword);
-        name = etName.getText().toString();
-        email = etEmail.getText().toString();
-        password = etPassword.getText().toString();
-        repassword = etReenterPassword.getText().toString();
+        name = etName.getText().toString().trim();
+        email = etEmail.getText().toString().trim();
+        password = etPassword.getText().toString().trim();
+        repassword = etReenterPassword.getText().toString().trim();
         btnRegister = findViewById(R.id.btn_register);
         if (!name.equals("") && !email.equals("") && !password.equals("") && !repassword.equals("")){
             Handler handler = new Handler(Looper.getMainLooper());
@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                     data[1] = email;
                     data[2] = password;
                     data[3] = repassword;
-                    PutData putData = new PutData("https://192.168.171.9/login/signup.php", "POST", field, data);
+                    PutData putData = new PutData("https://192.168.0.121/login/signup.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
