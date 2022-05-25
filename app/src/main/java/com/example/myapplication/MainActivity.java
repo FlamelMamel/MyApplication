@@ -15,6 +15,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
+import com.example.myapplication.model.Course;
+import com.example.myapplication.adapter.CourseAdapter;
 
 import com.example.myapplication.model.Category;
 
@@ -27,11 +29,15 @@ import com.example.myapplication.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    RecyclerView courseRecycler;
     RecyclerView categoryRecycler;
     CategoryAdapter categoryAdapter;
     private ViewPager viewPager;
     private ArrayList<MyModel> modelArrayList;
     private MyAdapter myAdapter;
+    static CourseAdapter courseAdapter;
+    static List<Course> courseList = new ArrayList<>();
+    static List<Course> fillCourseList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
         setCategoryRecycler(categoryList);
 
+        courseList.add(new com.example.myapplication.model.Course(0, "gr_1", 0, 4));
+        courseList.add(new com.example.myapplication.model.Course(1, "gr_2", 1, 4));
+        courseList.add(new com.example.myapplication.model.Course(2, "gr_3", 2, 4));
+        courseList.add(new com.example.myapplication.model.Course(3, "gr_4", 3, 4));
+
+        fillCourseList.addAll(courseList);
+        setCourseRecycler(courseList);
+
         viewPager = findViewById(R.id.viewPager);
         loadCards();
 
@@ -79,6 +93,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    private void setCourseRecycler(List<com.example.myapplication.model.Course> courseList) {
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+
+        courseRecycler = findViewById(R.id.courseRecycler);
+        courseRecycler.setLayoutManager(layoutManager);
+
+        courseAdapter = new CourseAdapter(this, courseList);
+        courseRecycler.setAdapter(courseAdapter);
+
+    }
+
+
+
+    public static void showCoursesByCategory(int category, int all){
+
+        courseList.clear();
+        courseList.addAll(fillCourseList);
+
+        List<com.example.myapplication.model.Course> filterCourses = new ArrayList<>();
+
+        for(com.example.myapplication.model.Course c : courseList){
+            if(c.getCategory() == category)
+                filterCourses.add(c);
+            if(c.getAll() == all)
+                filterCourses.add(c);
+
+        }
+
+        courseList.clear();
+        courseList.addAll((filterCourses));
+
+        courseAdapter.notifyDataSetChanged();
+    }
+
 
     private void setCategoryRecycler(List<Category> categoryList) {
 
