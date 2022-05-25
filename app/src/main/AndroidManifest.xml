@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -14,23 +16,23 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-
         <activity
             android:name=".LoginActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".SaunaActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"/>
+        <activity android:name=".Capture"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.MyApplication"/>
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:label="Регистрация" >
+            android:label="Регистрация">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
