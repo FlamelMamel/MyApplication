@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private ArrayList<MyModel> modelArrayList;
     private MyAdapter myAdapter;
+    private MediaPlayer phonk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
+
+        phonk = MediaPlayer.create(this, R.raw.phonk);
+        soundPlay(phonk);
 
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -160,5 +165,9 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void soundPlay(MediaPlayer sound){
+        sound.start();
     }
 }
