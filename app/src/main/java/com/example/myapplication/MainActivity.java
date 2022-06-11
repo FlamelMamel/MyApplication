@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.myapplication.adapter.CategoryAdapter;
+import com.example.myapplication.adapter.FavoritesAdapter;
 import com.example.myapplication.adapter.MyAdapter;
+import com.example.myapplication.model.Favorites;
 import com.example.myapplication.model.MyModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     RecyclerView categoryRecycler;
+    RecyclerView favoritesRecycler;
     CategoryAdapter categoryAdapter;
+    FavoritesAdapter favoritesAdapter;
     private ViewPager viewPager;
     private ArrayList<MyModel> modelArrayList;
     private MyAdapter myAdapter;

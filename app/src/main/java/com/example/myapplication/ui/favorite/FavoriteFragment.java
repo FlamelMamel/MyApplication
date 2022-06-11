@@ -7,10 +7,19 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentFavoriteBinding;
+import com.example.myapplication.model.Favorites;
+
+import com.example.myapplication.adapter.FavoritesAdapter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FavoriteFragment extends Fragment {
+    public RecyclerView favoritesRecycler;
 
     private FragmentFavoriteBinding binding;
 
@@ -18,6 +27,15 @@ public class FavoriteFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentFavoriteBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        List<Favorites> favorites = new ArrayList<>();
+        setInitialData(favorites);
+
+        favoritesRecycler = root.findViewById(R.id.list);
+        favoritesRecycler.setHasFixedSize(true);
+        favoritesRecycler.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        favoritesRecycler.setAdapter(new FavoritesAdapter(favorites));
+
         return root;
     }
 
@@ -25,5 +43,11 @@ public class FavoriteFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void setInitialData(List<Favorites> favorites){
+
+        favorites.add(new Favorites ("Russian", "Kabanbay Batyr", R.drawable.sauna_test1));
+        favorites.add(new Favorites ("Japan", "Uly Dala", R.drawable.jap_ban));
     }
 }
