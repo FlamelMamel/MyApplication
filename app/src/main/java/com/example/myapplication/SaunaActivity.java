@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,7 +22,14 @@ public class SaunaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sauna);
+
+        Intent intent = getIntent();
+
+        String fName = intent.getStringExtra("name");
+
+        TextView textView = findViewById(R.id.name);
+        textView.setText(fName);
 
         ImageSlider imageSlider = findViewById(R.id.slider);
         List<SlideModel> slideModels = new ArrayList<>();
@@ -56,4 +64,6 @@ public class SaunaActivity extends AppCompatActivity {
             sizeno.setText("" + number[0]+" Hour");
         }
     }
+
+
 }

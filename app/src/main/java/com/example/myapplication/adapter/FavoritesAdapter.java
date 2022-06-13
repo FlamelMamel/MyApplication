@@ -1,9 +1,10 @@
 package com.example.myapplication.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,14 +13,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.model.Favorites;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>{
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>{
 
-    List<Favorites> favorites;
 
-    public FavoritesAdapter(List<Favorites> favorites) {
+    private final OnSaunaClickListener onSaunaClickListener;
+    private final LayoutInflater inflater;
+    private List<Favorites> favorites = new ArrayList<>();
+    Favorites favorite;
+
+    public interface OnSaunaClickListener{
+        void onSaunaClick(int position);
+    }
+
+    public FavoritesAdapter(Context context, List<Favorites> favorites, OnSaunaClickListener onSaunaClickListener) {
         this.favorites = favorites;
+        this.onSaunaClickListener = onSaunaClickListener;
+        this.inflater = LayoutInflater.from(context);
     }
 
     public int getItemViewType(final int position) {
@@ -32,15 +44,47 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(FavoritesViewHolder holder, int position) {
-        Favorites state = favorites.get(position);
-        holder.sauna.setImageResource(state.getSaunaImg());
-        holder.name.setText(state.getName());
-        holder.address.setText(state.getAddress());
+    public void onBindViewHolder(FavoritesAdapter.FavoritesViewHolder holder, int position) {
+        favorite = favorites.get(position);
+        holder.sauna.setBackgroundResource(favorite.getSaunaImg());
+        holder.name.setText(favorite.getName());
+        holder.address.setText(favorite.getAddress());
+        holder.price.setText(favorite.getPrice());
+        holder.description.setText(favorite.getDescription());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                // вызываем метод слушателя, передавая ему данные
+                onSaunaClickListener.onSaunaClick(holder.getAdapterPosition());
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return favorites.size();
+    }
+
+    public class FavoritesViewHolder extends RecyclerView.ViewHolder {
+
+        TextView name;
+        TextView address;
+        FrameLayout sauna;
+        TextView price;
+        TextView description;
+        FavoritesAdapter.OnSaunaClickListener onSaunaClickListener;
+
+        public FavoritesViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            sauna = itemView.findViewById(R.id.sauna);
+            address = itemView.findViewById(R.id.address);
+            name = itemView.findViewById(R.id.name);
+            price = itemView.findViewById(R.id.price);
+            description = itemView.findViewById(R.id.description);
+        }
+
     }
 }

@@ -11,24 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.Category;
+import com.example.myapplication.model.Favorites;
 
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
 
-    Context context;
     List<Category> categories;
 
-    public CategoryAdapter(Context context, List<Category> categories) {
-        this.context = context;
+    public CategoryAdapter(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public int getItemViewType(final int position) {
+        return R.layout.category_item;
     }
 
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View categoryItems = LayoutInflater.from(context).inflate(R.layout.category_item, parent, false);
-        return new CategoryViewHolder(categoryItems);
+        View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
+        return new CategoryViewHolder(view);
     }
 
     @Override
@@ -39,17 +42,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public int getItemCount() {
         return categories.size();
-    }
-
-    public static final class CategoryViewHolder extends RecyclerView.ViewHolder{
-
-        TextView categoryTitle;
-
-        public CategoryViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            categoryTitle = itemView.findViewById(R.id.categoryTitle);
-        }
     }
 
 }

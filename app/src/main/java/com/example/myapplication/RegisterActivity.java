@@ -17,6 +17,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etReenterPassword;
     private Button btnRegister;
     private String name, email, password, repassword;
+    public String url = "http://192.168.4.9/";
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,12 +62,12 @@ public class RegisterActivity extends AppCompatActivity {
                     data[1] = email;
                     data[2] = password;
                     data[3] = repassword;
-                    PutData putData = new PutData("https://192.168.0.121/login/signup.php", "POST", field, data);
+                    PutData putData = new PutData(url + "/justRelax/signup.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
-                            //End ProgressBar (Set visibility to GONE)
-                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
                         }
                     }
                     //End Write and Read data with URL
