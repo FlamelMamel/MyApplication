@@ -3,34 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable-v24/btn_custom.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable-v24/button_bg.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable-v24/ic_cat_icon.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable-v24/ic_main.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable-v24/splash.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/favorite_style.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/favorites_style.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/favorites_styles.xml" value="0.1195" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_baseline_turned_in_24.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.238" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/font/abel.xml" value="0.30520833333333336" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_bar_code.xml" value="0.13551165146909827" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_login.xml" value="0.275" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_sauna.xml" value="0.2" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_splash_screen.xml" value="0.275" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/card_item.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_sauna.xml" value="0.6" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/category_item.xml" value="0.25679347826086957" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/favorite_styles.xml" value="0.1337386018237082" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_favorite.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_favorite1.xml" value="0.1337386018237082" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_home.xml" value="0.275" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_profile.xml" value="0.275" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_visited.xml" value="0.275" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragments_list.xml" value="0.17355371900826447" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragments_list.xml" value="0.1" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/list_item.xml" value="0.10371376811594203" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
       </map>
