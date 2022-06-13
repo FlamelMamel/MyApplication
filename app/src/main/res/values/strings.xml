@@ -23,4 +23,10 @@
     <string name="not_registered">Not registered?</string>
     <string name="alreadyregistered">Already registered?</string>
     <string name="visited">Visited</string>
+    <string name="select">Select City</string>
+    <string-array name="brew_array">
+        <item>Нур-Султан</item>
+        <item>Алмата</item>
+        <item>Шымкент</item>
+    </string-array>
 </resources>

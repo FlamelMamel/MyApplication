@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.example.myapplication.adapter.CategoryAdapter;
@@ -46,10 +49,29 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<MyModel> modelArrayList;
     private MyAdapter myAdapter;
     private MediaPlayer phonk;
+    String[] items = {"Nur-Sultan", "Almaty"};
+
+    AutoCompleteTextView autoCompleteTxt;
+
+    ArrayAdapter<String> adapterItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.fragment_profile);
+        autoCompleteTxt = findViewById(R.id.auto_complete_txt);
+
+        adapterItems = new ArrayAdapter<String>(this,R.layout.list_item_dropdown,items);
+        autoCompleteTxt.setAdapter(adapterItems);
+
+        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -170,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_LONG).show();
         }
     }
+
 
     public void soundPlay(MediaPlayer sound){
         sound.start();
