@@ -3,10 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragment_favorite.xml" value="0.27447916666666666" />
-        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/activity_register.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/activity_sauna.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/card_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/category_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragment_favorite.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragment_visited.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragments_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/fragments_list_favorite.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/list_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24074074074074073" />
+        <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/menu/share_menu.xml" value="0.24074074074074073" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/corner_style.xml" value="0.1" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_baseline_turned_in_not_24.xml" value="0.1675" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.238" />

@@ -59,7 +59,7 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="152dp"
+                android:layout_width="182dp"
                 android:layout_height="43dp"
                 android:fontFamily="@font/montserrat_alternates_bold"
                 android:text="@string/rec"
@@ -72,9 +72,9 @@
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="56dp"
+                android:layout_width="wrap_content"
+                android:layout_height="159dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +85,7 @@
                 android:id="@+id/homeRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
