@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.adapter.CardsAdapter;
 import com.example.myapplication.model.CardsModel;
+import com.example.myapplication.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.Nullable;
@@ -29,9 +31,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private ArrayList<CardsModel> modelArrayList;
-    private CardsAdapter cardsAdapter;
-    private MediaPlayer phonk;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,22 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                id = null;
+            } else {
+                id = extras.getString("id");
+            }
+        } else {
+            id = (String) savedInstanceState.getSerializable("id");
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("id", id);
+
+        HomeFragment datas = new HomeFragment();
+        datas.setArguments(bundle);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
@@ -59,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         intentIntegrator.setOrientationLocked(true);
         intentIntegrator.setCaptureActivity(Capture.class);
         intentIntegrator.initiateScan();
+    }
+
+    public String getMyData() {
+        return id;
     }
 
     @Override

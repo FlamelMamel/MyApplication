@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
     private String email, password;
-    private String url = "http://192.168.4.9/";
+    private String url = "http://justrelax.kz";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +54,15 @@ public class LoginActivity extends AppCompatActivity {
                     String[] data = new String[2];
                     data[0] = email;
                     data[1] = password;
-                    PutData putData = new PutData(url + "/justRelax/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://justrelax.kz/login.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            intent.putExtra("id", result);
-                            startActivity(intent);
+                            if(!result.equals("Login failed")){
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.putExtra("id", result);
+                                startActivity(intent);
+                            }
                         }
                     }
                     //End Write and Read data with URL

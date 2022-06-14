@@ -6,14 +6,9 @@
     android:layout_marginTop="10dp">
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <FrameLayout
         android:id="@+id/sauna"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/corner_style">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/name"
@@ -63,10 +58,9 @@
             android:layout_height="45dp"
             android:layout_marginStart="340dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/ic_baseline_turned_in_not_24"/>
+            android:background="@drawable/ic_baseline_turned_in_24"/>
 
         <Button
-            android:id="@+id/buttonBook"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:text="Book"
@@ -75,7 +69,6 @@
             android:textSize="13sp"
             android:fontFamily="@font/montserrat_alternates_bold"/>
 
-    </FrameLayout>
     </FrameLayout>
 
 </FrameLayout>

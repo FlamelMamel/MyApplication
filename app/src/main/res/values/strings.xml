@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">JustRelax</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
     <string name="title_home">Home</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_profile">Profile</string>

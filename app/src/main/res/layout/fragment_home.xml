@@ -8,10 +8,10 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -24,9 +24,10 @@
                 android:id="@+id/imageView4"
                 android:layout_width="77dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:contentDescription="@string/app_icon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.293"
+                app:layout_constraintHorizontal_bias="0.284"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/sauna_icon" />
@@ -35,7 +36,8 @@
                 android:id="@+id/just"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="156dp"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/just"
                 android:textColor="@color/black"
                 android:textSize="30sp"
@@ -46,6 +48,7 @@
                 android:id="@+id/relax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/relax"
                 android:textColor="#EC6D6D"
                 android:textSize="30sp"
@@ -71,11 +74,21 @@
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:layout_marginTop="56dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3"
                 tools:ignore="SpeakableTextPresentCheck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewPager" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
