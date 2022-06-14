@@ -27,12 +27,14 @@
                 android:elevation="4dp"
                 android:visibility="visible">
 
-                <com.denzcoskun.imageslider.ImageSlider
+<!--                <com.denzcoskun.imageslider.ImageSlider-->
+                <ImageView
                     android:id="@+id/slider"
                     android:layout_width="364dp"
                     android:layout_height="348dp"
+                    android:scaleType="fitXY"
                     android:layout_gravity="center"
-                    android:background="@drawable/img" />
+                     />
 
 
 
@@ -78,8 +80,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
-                    android:gravity="right"
-                    android:text="Price:                           5000₸/h"
+                    android:gravity="clip_horizontal"
+                    android:text="Price:                                  5000₸/h"
                     android:textColor="@color/colorRelax"
                     android:textSize="26dp" />
 
@@ -89,8 +91,19 @@
                     android:layout_marginTop="6dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
-                    android:gravity="right"
-                    android:text="City:                                                                Nur-Sultan"
+                    android:gravity="fill_horizontal"
+                    android:text="City:                                                                    Nur-Sultan"
+                    android:textColor="@color/colorRelax"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/abel"
+                    android:gravity="fill_horizontal"
+                    android:text="Adress:                                             Kabanbay Batyr 60A/6"
                     android:textColor="@color/colorRelax"
                     android:textSize="16dp" />
 
@@ -101,7 +114,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
                     android:gravity="right"
-                    android:text="Adress:                                      Kabanbay Batyr 60A/6"
+                    android:text="Workin mode:                Tu/Wd/Th/Fr/St/Sn 13-00 : 24-00"
                     android:textColor="@color/colorRelax"
                     android:textSize="16dp" />
 
@@ -112,18 +125,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/abel"
                     android:gravity="right"
-                    android:text="Workin mode:        Tu/Wd/Th/Fr/St/Sn 13-00 : 24-00"
-                    android:textColor="@color/colorRelax"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/abel"
-                    android:gravity="right"
-                    android:text="Phone number:                                     +7 747 500 1098"
+                    android:text="Phone number:                                        +7 747 500 1098"
                     android:textColor="@color/colorRelax"
                     android:textSize="16dp" />
 

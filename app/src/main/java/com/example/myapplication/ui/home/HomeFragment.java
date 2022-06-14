@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,6 +45,7 @@ public class HomeFragment extends Fragment  implements SaunasAdapter.OnSaunaClic
     public CardsAdapter cardsAdapter;
     public String url = "http://justrelax.kz";
     String id;
+    TextView textView;
 
     public RecyclerView saunasRecycler;
 
@@ -58,8 +60,10 @@ public class HomeFragment extends Fragment  implements SaunasAdapter.OnSaunaClic
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         saunasRecycler = root.findViewById(R.id.homeRecycler);
         setInitialData(favorites);
+
 
         SaunasAdapter.OnSaunaClickListener saunaClickListener = new SaunasAdapter.OnSaunaClickListener() {
             @Override

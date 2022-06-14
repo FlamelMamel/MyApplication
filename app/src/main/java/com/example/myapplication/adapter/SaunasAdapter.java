@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.Saunas;
-import com.squareup.picasso.Picasso;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.io.IOException;
