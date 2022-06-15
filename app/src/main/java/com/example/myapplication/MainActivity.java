@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +23,10 @@ import com.example.myapplication.model.CardsModel;
 import com.example.myapplication.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +40,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -47,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     String id;
     TextView textView;
-    ImageButton imageButton;
+    ImageView imageView;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +87,39 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        imageButton =(ImageButton) findViewById(R.id.profilePic);
+//        imageView =(ImageView) findViewById(R.id.profilePic);
+//        button = (Button) findViewById(R.id.button);
+
+//        ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+//                new ActivityResultContracts.StartActivityForResult(),
+//                new ActivityResultCallback<ActivityResult>() {
+//                    @Override
+//                    public void onActivityResult(ActivityResult result) {
+//                        Intent intent = result.getData();
+//                        if(intent != null){
+//                            try {
+//                                Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+//                                        getContentResolver(),intent.getData()
+//                                );
+//
+//                                imageView.setImageBitmap(bitmap);
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    }
+//                }
+//        );
+
+//        button.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_PICK);
+//                intent.setType("image/plain");
+//                resultLauncher.launch(intent);
+//            }
+//        });
+
 
 //        imageButton.setOnClickListener(new View.OnClickListener(){
 //            @Override
