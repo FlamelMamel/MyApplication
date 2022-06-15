@@ -18,22 +18,25 @@
         <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/layout/list_item.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24074074074074073" />
         <entry key="..\:/AndroidStudioPj/MyApplication/app/src/main/res/menu/share_menu.xml" value="0.24074074074074073" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable-v24/btn_custom.xml" value="0.1" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/corner_style.xml" value="0.1" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/fav_btn.xml" value="0.1705" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_baseline_turned_in_not_24.xml" value="0.1675" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.238" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/font/abel.xml" value="0.30520833333333336" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_bar_code.xml" value="0.13551165146909827" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_login.xml" value="0.275" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_book.xml" value="0.2" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_login.xml" value="0.11333333333333333" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_register.xml" value="0.264" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_sauna.xml" value="0.6" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/activity_sauna.xml" value="0.264" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/card_item.xml" value="0.19701086956521738" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/category_item.xml" value="0.25679347826086957" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_favorite.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_home.xml" value="0.275" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_favorite.xml" value="0.2" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_profile.xml" value="0.275" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragment_visited.xml" value="0.275" />
-        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragments_list.xml" value="0.4" />
+        <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragments_list.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/fragments_list_favorite.xml" value="0.26721014492753625" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/layout/list_item.xml" value="0.10371376811594203" />
         <entry key="..\:/Users/Acer/AndroidStudioProjects/MyApplication14/app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />

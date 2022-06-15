@@ -99,6 +99,8 @@ public class SaunaActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     public void plus(View view){
         sizeno = findViewById(R.id.sizeno);
         if (number[0] == 9) {

@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentProfileBinding;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class ProfileFragment extends Fragment {
-
+    TextView textView;
+    public String url = "http://justrelax.kz";
     private FragmentProfileBinding binding;
 
 
@@ -24,6 +26,9 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        textView = root.findViewById(R.id.user_name);
+        textView.setText(getUserName(4));
+
         return root;
     }
 
@@ -31,5 +36,22 @@ public class ProfileFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public String getUserName(int id){
+        final String[] result = new String[1];
+        String[] field = new String[1];
+        field[0] = "id";
+
+        String[] data = new String[1];
+        data[0] = String.valueOf(id);
+
+        PutData putData = new PutData(url + "/getUserName.php", "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                result[0] = putData.getResult();
+            }
+        }
+        return result[0];
     }
 }

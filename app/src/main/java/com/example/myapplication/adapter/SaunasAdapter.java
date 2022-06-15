@@ -1,6 +1,7 @@
 package com.example.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.BookActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.model.Saunas;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
@@ -37,7 +39,7 @@ public class SaunasAdapter extends RecyclerView.Adapter<SaunasAdapter.SaunasView
     private static List<Saunas> favorites;
     private final OnSaunaClickListener onSaunaClickListener;
     private final LayoutInflater inflater;
-    Context context;
+    private Context context;
     private List<Saunas> saunas = new ArrayList<>();
     Saunas sauna;
 
@@ -74,35 +76,35 @@ public class SaunasAdapter extends RecyclerView.Adapter<SaunasAdapter.SaunasView
             @Override
             public void onClick(View v) {
                 holder.fav.setBackgroundResource(R.drawable.ic_baseline_turned_in_24);
-                Handler handler = new Handler(Looper.getMainLooper());
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        //Starting Write and Read data with URL
-                        //Creating array for parameters
-                        String[] field = new String[5];
-                        field[0] = "id";
-                        field[1] = "title";
-                        field[2] = "address";
-                        field[3] = "price";
-                        field[4] = "description";
-
-                        String[] data = new String[5];
-                        data[0] = String.valueOf(sauna.getId());
-                        data[1] = sauna.getName();
-                        data[2] = sauna.getAddress();
-                        data[3] = String.valueOf(sauna.getPrice());
-                        data[4] = sauna.getDescription();
-
-                        PutData putData = new PutData("https://justrelax.kz/addFavorite.php", "POST", field, data);
-                        if (putData.startPut()) {
-                            if (putData.onComplete()) {
-
-                            }
-                        }
-                        //End Write and Read data with URL
-                    }
-                });
+//                Handler handler = new Handler(Looper.getMainLooper());
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        //Starting Write and Read data with URL
+//                        //Creating array for parameters
+//                        String[] field = new String[5];
+//                        field[0] = "id";
+//                        field[1] = "title";
+//                        field[2] = "address";
+//                        field[3] = "price";
+//                        field[4] = "description";
+//
+//                        String[] data = new String[5];
+//                        data[0] = String.valueOf(sauna.getId());
+//                        data[1] = sauna.getName();
+//                        data[2] = sauna.getAddress();
+//                        data[3] = String.valueOf(sauna.getPrice());
+//                        data[4] = sauna.getDescription();
+//
+//                        PutData putData = new PutData("https://justrelax.kz/addFavorite.php", "POST", field, data);
+//                        if (putData.startPut()) {
+//                            if (putData.onComplete()) {
+//
+//                            }
+//                        }
+//                        //End Write and Read data with URL
+//                    }
+//                });
             }
         });
 

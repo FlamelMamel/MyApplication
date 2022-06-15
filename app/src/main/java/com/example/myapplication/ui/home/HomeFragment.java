@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,8 +45,7 @@ public class HomeFragment extends Fragment  implements SaunasAdapter.OnSaunaClic
     private ArrayList<CardsModel> modelArrayList;
     public CardsAdapter cardsAdapter;
     public String url = "http://justrelax.kz";
-    String id;
-    TextView textView;
+    Button button;
 
     public RecyclerView saunasRecycler;
 
@@ -63,7 +63,6 @@ public class HomeFragment extends Fragment  implements SaunasAdapter.OnSaunaClic
 
         saunasRecycler = root.findViewById(R.id.homeRecycler);
         setInitialData(favorites);
-
 
         SaunasAdapter.OnSaunaClickListener saunaClickListener = new SaunasAdapter.OnSaunaClickListener() {
             @Override
@@ -107,26 +106,14 @@ public class HomeFragment extends Fragment  implements SaunasAdapter.OnSaunaClic
 
     private void setInitialData(List<Saunas> favorites) {
         int i = 1;
-        while (!getTitleFromData(i).equals("")) {
-            String name = getTitleFromData(i);
-            String address = getAddressFromData(i);
-            String price = getPriceFromData(i);
-            String description = getDescriptionFromData(i);
-            favorites.add(new Saunas(i, name, address, R.drawable.untitled, price + " tg/hour", description));
+//        while (!getTitleFromData(i).equals("")) {
+//            String name = getTitleFromData(i);
+//            String address = getAddressFromData(i);
+//            String price = getPriceFromData(i);
+//            String description = getDescriptionFromData(i);
+            favorites.add(new Saunas(1, "Title", "address", R.drawable.untitled, "price" + " tg/hour", "description"));
             i++;
-        }
-    }
-
-    protected Bitmap doInBackground(String... urls) {
-        String imageURL=urls[0];
-        Bitmap bimage=null;
-        try {
-            InputStream in=new java.net.URL(imageURL).openStream();
-            bimage=BitmapFactory.decodeStream(in);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return bimage;
+ //       }
     }
 
     @Override

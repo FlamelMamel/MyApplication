@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -64,16 +65,6 @@
             android:layout_marginStart="340dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/ic_baseline_turned_in_not_24"/>
-
-        <Button
-            android:id="@+id/buttonBook"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:text="Book"
-            android:layout_marginStart="250dp"
-            android:layout_marginTop="15dp"
-            android:textSize="13sp"
-            android:fontFamily="@font/montserrat_alternates_bold"/>
 
     </FrameLayout>
     </FrameLayout>
