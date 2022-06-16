@@ -49,14 +49,13 @@ public class SaunaActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.slider);
 
-//        Integer[] imageSlider = findViewById(R.id.slider);
-//        List<SlideModel> slideModels = new ArrayList<>();
-//        slideModels.add(new SlideModel(R.drawable.img));
-//        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/dopphoto/image-04-08-21-11-00-17.jpeg"));
-//        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/dopphoto/image-04-08-21-11-00-9.jpeg"));
-//        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/dopphoto/image-04-08-21-11-00-14.jpeg"));
-//        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/sauni/main.jpeg"));
-//        slideModels.add(new SlideModel(R.drawable.img));
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.img));
+        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/dopphoto/image-04-08-21-11-00-17.jpeg"));
+        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/dopphoto/image-04-08-21-11-00-9.jpeg"));
+        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/dopphoto/image-04-08-21-11-00-14.jpeg"));
+        slideModels.add(new SlideModel("https://sauni-moskva.ru/sites/default/files/sauni/main.jpeg"));
+        slideModels.add(new SlideModel(R.drawable.img));
 
 
         imageView.setImageResource(images[r.nextInt(images.length)]);
@@ -124,4 +123,8 @@ public class SaunaActivity extends AppCompatActivity {
     }
 
 
+    public void book(View view) {
+        Intent intent = new Intent(SaunaActivity.this, BookActivity.class);
+        startActivity(intent);
+    }
 }

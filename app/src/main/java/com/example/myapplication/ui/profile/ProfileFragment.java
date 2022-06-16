@@ -16,6 +16,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class ProfileFragment extends Fragment {
     TextView textView;
+    TextView textView1;
     public String url = "http://justrelax.kz";
     private FragmentProfileBinding binding;
 
@@ -27,7 +28,9 @@ public class ProfileFragment extends Fragment {
         View root = binding.getRoot();
 
         textView = root.findViewById(R.id.user_name);
+        textView1 = root.findViewById(R.id.user_phone);
         textView.setText(getUserName(4));
+        textView1.setText(getUserEmail(4));
 
         return root;
     }
@@ -47,6 +50,23 @@ public class ProfileFragment extends Fragment {
         data[0] = String.valueOf(id);
 
         PutData putData = new PutData(url + "/getUserName.php", "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                result[0] = putData.getResult();
+            }
+        }
+        return result[0];
+    }
+
+    public String getUserEmail(int id){
+        final String[] result = new String[1];
+        String[] field = new String[1];
+        field[0] = "id";
+
+        String[] data = new String[1];
+        data[0] = String.valueOf(id);
+
+        PutData putData = new PutData(url + "/getEmail.php", "POST", field, data);
         if (putData.startPut()) {
             if (putData.onComplete()) {
                 result[0] = putData.getResult();

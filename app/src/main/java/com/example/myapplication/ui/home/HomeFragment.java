@@ -106,14 +106,14 @@ public class HomeFragment extends Fragment  implements SaunasAdapter.OnSaunaClic
 
     private void setInitialData(List<Saunas> favorites) {
         int i = 1;
-//        while (!getTitleFromData(i).equals("")) {
-//            String name = getTitleFromData(i);
-//            String address = getAddressFromData(i);
-//            String price = getPriceFromData(i);
-//            String description = getDescriptionFromData(i);
-            favorites.add(new Saunas(1, "Title", "address", R.drawable.untitled, "price" + " tg/hour", "description"));
+        while (!getTitleFromData(i).equals("")) {
+            String name = getTitleFromData(i);
+            String address = getAddressFromData(i);
+            String price = getPriceFromData(i);
+            String description = getDescriptionFromData(i);
+            favorites.add(new Saunas(1, name, address, R.drawable.untitled, price + " tg/hour", description));
             i++;
- //       }
+        }
     }
 
     @Override

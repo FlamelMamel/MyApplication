@@ -38,7 +38,7 @@ public class FavoriteFragment extends Fragment implements SaunasAdapter.OnSaunaC
     private FragmentFavoriteBinding binding;
     List<Saunas> favorites = new ArrayList<>();
     Saunas favorite;
-    String urlrelax = "http://justrelax.kz/";
+    public String url = "http://justrelax.kz";
 
     public SaunasAdapter.OnSaunaClickListener onClickListener;
 
@@ -46,8 +46,6 @@ public class FavoriteFragment extends Fragment implements SaunasAdapter.OnSaunaC
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentFavoriteBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        SaunasAdapter.getFavorites();
 
         favoritesRecycler = root.findViewById(R.id.list);
 
@@ -61,6 +59,8 @@ public class FavoriteFragment extends Fragment implements SaunasAdapter.OnSaunaC
                 startActivity(intent);
             }
         };
+
+        setInitialData(favorites);
 
         favoritesRecycler.setHasFixedSize(true);
         FavoritesAdapter adapter = new FavoritesAdapter(getActivity(), favorites, saunaClickListener);
@@ -83,52 +83,85 @@ public class FavoriteFragment extends Fragment implements SaunasAdapter.OnSaunaC
         intent.putExtra("name", favorite.getName());
         startActivity(intent);
     }
-    private Drawable ImageOperations(Context ctx, String url, String saveFilename) {
-        try {
-            InputStream is = (InputStream) this.fetch(url);
-            Drawable d = Drawable.createFromStream(is, saveFilename);
-            return d;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return null;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+    private void setInitialData(List<Saunas> favorites) {
+        int i = 1;
+        while (!getTitleFromData(i).equals("")) {
+            String name = getTitleFromData(i);
+            String address = getAddressFromData(i);
+            String price = getPriceFromData(i);
+            String description = getDescriptionFromData(i);
+            favorites.add(new Saunas(1, name, address, R.drawable.untitled, price + " tg/hour", description));
+            i++;
         }
     }
 
-    public Object fetch(String address) throws MalformedURLException,IOException {
-        URL url = new URL(address);
-        Object content = url.getContent();
-        return content;
+
+    public String getTitleFromData(int id){
+        final String[] result = new String[1];
+        String[] field = new String[1];
+        field[0] = "id";
+
+        String[] data = new String[1];
+        data[0] = String.valueOf(id);
+
+        PutData putData = new PutData(url + "/getNameFavorite.php", "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                result[0] = putData.getResult();
+            }
+        }
+        return result[0];
     }
 
+    public String getAddressFromData(int id){
+        final String[] result = new String[1];
+        String[] field = new String[1];
+        field[0] = "id";
 
-    public String getName(int id){
-        Handler handler = new Handler(Looper.getMainLooper());
-        final String[] res = {null};
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                //Starting Write and Read data with URL
-                //Creating array for parameters
-                String[] field = new String[1];
-                field[0] = "id";
+        String[] data = new String[1];
+        data[0] = String.valueOf(id);
 
-                String[] data = new String[1];
-                data[0] = String.valueOf(id);
-
-                PutData putData = new PutData(urlrelax + "/getName.php", "POST", field, data);
-                if (putData.startPut()) {
-                    if (putData.onComplete()) {
-                        String result = putData.getResult();
-                        res[0] = result;
-                    }
-                }
-                //End Write and Read data with URL
+        PutData putData = new PutData(url + "/getAddressFavorite.php", "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                result[0] = putData.getResult();
             }
-        });
-        return res[0];
+        }
+        return result[0];
+    }
+
+    public String getPriceFromData(int id){
+        final String[] result = new String[1];
+        String[] field = new String[1];
+        field[0] = "id";
+
+        String[] data = new String[1];
+        data[0] = String.valueOf(id);
+
+        PutData putData = new PutData(url + "/getPriceFavorite.php", "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                result[0] = putData.getResult();
+            }
+        }
+        return result[0];
+    }
+
+    public String getDescriptionFromData(int id){
+        final String[] result = new String[1];
+        String[] field = new String[1];
+        field[0] = "id";
+
+        String[] data = new String[1];
+        data[0] = String.valueOf(id);
+
+        PutData putData = new PutData(url + "/getDescriptionFavorite.php", "POST", field, data);
+        if (putData.startPut()) {
+            if (putData.onComplete()) {
+                result[0] = putData.getResult();
+            }
+        }
+        return result[0];
     }
 
 }

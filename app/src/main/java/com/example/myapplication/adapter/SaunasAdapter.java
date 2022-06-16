@@ -76,35 +76,35 @@ public class SaunasAdapter extends RecyclerView.Adapter<SaunasAdapter.SaunasView
             @Override
             public void onClick(View v) {
                 holder.fav.setBackgroundResource(R.drawable.ic_baseline_turned_in_24);
-//                Handler handler = new Handler(Looper.getMainLooper());
-//                handler.post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        //Starting Write and Read data with URL
-//                        //Creating array for parameters
-//                        String[] field = new String[5];
-//                        field[0] = "id";
-//                        field[1] = "title";
-//                        field[2] = "address";
-//                        field[3] = "price";
-//                        field[4] = "description";
-//
-//                        String[] data = new String[5];
-//                        data[0] = String.valueOf(sauna.getId());
-//                        data[1] = sauna.getName();
-//                        data[2] = sauna.getAddress();
-//                        data[3] = String.valueOf(sauna.getPrice());
-//                        data[4] = sauna.getDescription();
-//
-//                        PutData putData = new PutData("https://justrelax.kz/addFavorite.php", "POST", field, data);
-//                        if (putData.startPut()) {
-//                            if (putData.onComplete()) {
-//
-//                            }
-//                        }
-//                        //End Write and Read data with URL
-//                    }
-//                });
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Starting Write and Read data with URL
+                        //Creating array for parameters
+                        String[] field = new String[5];
+                        field[0] = "id";
+                        field[1] = "title";
+                        field[2] = "address";
+                        field[3] = "price";
+                        field[4] = "description";
+
+                        String[] data = new String[5];
+                        data[0] = String.valueOf(sauna.getId());
+                        data[1] = sauna.getName();
+                        data[2] = sauna.getAddress();
+                        data[3] = String.valueOf(sauna.getPrice());
+                        data[4] = sauna.getDescription();
+
+                        PutData putData = new PutData("https://justrelax.kz/addFavorite.php", "POST", field, data);
+                        if (putData.startPut()) {
+                            if (putData.onComplete()) {
+
+                            }
+                        }
+                        //End Write and Read data with URL
+                    }
+                });
             }
         });
 
@@ -168,7 +168,6 @@ public class SaunasAdapter extends RecyclerView.Adapter<SaunasAdapter.SaunasView
             price = itemView.findViewById(R.id.price);
             description = itemView.findViewById(R.id.description);
             fav = itemView.findViewById(R.id.fav);
-            book = itemView.findViewById(R.id.buttonBook);
 
         }
 
